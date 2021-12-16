@@ -9,7 +9,7 @@ import Foundation
 
 public protocol PacketTunnelProvider: TunnelProvider
 {
-    var packetFlow: PacketTunnelFlow {get}
+    var packets: PacketTunnelFlow {get}
 
     func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)
     func stopTunnel(with reason: ProviderStopReason, completionHandler: @escaping () -> Void)

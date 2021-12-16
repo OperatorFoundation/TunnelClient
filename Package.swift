@@ -5,11 +5,16 @@ import PackageDescription
 
 let package = Package(
     name: "TunnelClient",
+    platforms: [.macOS(.v10_15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "TunnelClient",
             targets: ["TunnelClient"]),
+        .library(
+            name: "TunnelClientMacOS",
+            targets: ["TunnelClient"]
+        )
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -20,9 +25,13 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "TunnelClient",
+            dependencies: ["TunnelClientMacOS"]),
+        .target(
+            name: "TunnelClientMacOS",
             dependencies: []),
         .testTarget(
             name: "TunnelClientTests",
             dependencies: ["TunnelClient"]),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )

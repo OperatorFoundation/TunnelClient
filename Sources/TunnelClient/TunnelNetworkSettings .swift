@@ -10,7 +10,7 @@ import Foundation
 public protocol TunnelNetworkSettings
 {
     var tunnelRemoteAddress: String { get }
-    var dnsSettings: DNSSettings? { get set }
+    var dns: DNSSettings? { get set }
 
     init(tunnelRemoteAddress address: String)
 }

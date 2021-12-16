@@ -9,8 +9,8 @@ import Foundation
 
 public protocol PacketTunnelNetworkSettings: TunnelNetworkSettings
 {
-    var ipv4Settings: IPv4Settings? { get set }
-    var ipv6Settings: IPv6Settings? { get set }
+    var ipv4: IPv4Settings? { get set }
+    var ipv6: IPv6Settings? { get set }
     var tunnelOverheadBytes: NSNumber? { get set }
     var mtu: NSNumber? { get set }
 }
