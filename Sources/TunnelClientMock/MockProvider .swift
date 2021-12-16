@@ -1,13 +1,14 @@
 //
-//  Provider.swift
+//  MockProvider.swift
 //  
 //
 //  Created by Dr. Brandon Wiley on 12/15/21.
 //
 
 import Foundation
+import TunnelClient
 
-public protocol Provider
+public class MockProvider: Provider
 {
     
 }
