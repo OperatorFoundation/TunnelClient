@@ -10,6 +10,10 @@ import TunnelClient
 
 open class MockTunnelProvider: TunnelProvider
 {
+    public init()
+    {
+    }
+
     open func setNetworkSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
     {
         completionHandler(nil)
