@@ -9,15 +9,11 @@ import Foundation
 import TunnelClient
 import Chord
 
-open class MockPacketTunnelProvider: PacketTunnelProvider
+open class MockPacketTunnelProvider: MockTunnelProvider, PacketTunnelProvider
 {
     public var packets: PacketTunnelFlow = MockPacketTunnelFlow(readQueue: BlockingQueue<PacketTunnelFlowPacket>(), writeQueue: BlockingQueue<PacketTunnelFlowPacket>())
 
     public var configuration: VPNProtocol = MockVPNProtocol()
-
-    public init()
-    {
-    }
 
     open func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)
     {
@@ -31,18 +27,5 @@ open class MockPacketTunnelProvider: PacketTunnelProvider
 
     open func cancelTunnelWithError(_ error: Error?)
     {
-    }
-
-    open func setNetworkSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
-    {
-        completionHandler(nil)
-    }
-
-    open func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?)
-    {
-        if let completionHandler = completionHandler
-        {
-            completionHandler(nil)
-        }
     }
 }

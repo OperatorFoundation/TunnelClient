@@ -15,6 +15,7 @@ public protocol PacketTunnelProvider: TunnelProvider
     func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)
     func stopTunnel(with reason: ProviderStopReason, completionHandler: @escaping () -> Void)
     func cancelTunnelWithError(_ error: Error?)
+    
 }
 
 public enum ProviderStopReason
