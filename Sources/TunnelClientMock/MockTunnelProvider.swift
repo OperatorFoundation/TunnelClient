@@ -14,7 +14,7 @@ open class MockTunnelProvider: TunnelProvider
     {
     }
 
-    open func setTunnelSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
+    open func setNetworkSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
     {
         completionHandler(nil)
     }
