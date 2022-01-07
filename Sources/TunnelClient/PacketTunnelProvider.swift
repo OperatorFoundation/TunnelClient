@@ -10,6 +10,7 @@ import Foundation
 public protocol PacketTunnelProvider: TunnelProvider
 {
     var packets: PacketTunnelFlow {get}
+    var configuration: VPNProtocol {get}
 
     func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)
     func stopTunnel(with reason: ProviderStopReason, completionHandler: @escaping () -> Void)

@@ -55,7 +55,16 @@ extension NEPacketTunnelNetworkSettings: PacketTunnelNetworkSettings
     }
 }
 
-extension NEPacketTunnelProvider: PacketTunnelProvider {
+extension NEPacketTunnelProvider: PacketTunnelProvider
+{
+    public var configuration: VPNProtocol
+    {
+        get
+        {
+            return self.protocolConfiguration
+        }
+    }
+
     public var packets: PacketTunnelFlow
     {
         return self.packetFlow
@@ -108,5 +117,8 @@ extension NETunnelNetworkSettings: TunnelNetworkSettings
 
 extension NEIPv4Settings: IPv4Settings {}
 extension NEIPv6Settings: IPv6Settings {}
+
+extension NETunnelProviderProtocol: TunnelProviderProtocol {}
+extension NEVPNProtocol: VPNProtocol {}
 
 #endif

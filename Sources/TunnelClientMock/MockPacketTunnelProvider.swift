@@ -13,6 +13,8 @@ open class MockPacketTunnelProvider: PacketTunnelProvider
 {
     public var packets: PacketTunnelFlow = MockPacketTunnelFlow(readQueue: BlockingQueue<PacketTunnelFlowPacket>(), writeQueue: BlockingQueue<PacketTunnelFlowPacket>())
 
+    public var configuration: VPNProtocol = MockVPNProtocol()
+
     public init()
     {
     }

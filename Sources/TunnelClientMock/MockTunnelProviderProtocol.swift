@@ -12,4 +12,10 @@ public struct MockTunnelProviderProtocol: TunnelProviderProtocol
 {
     public var providerConfiguration: [String : Any]?
     public var providerBundleIdentifier: String?
+
+    public init()
+    {
+        self.providerConfiguration = nil
+        self.providerBundleIdentifier = nil
+    }
 }
