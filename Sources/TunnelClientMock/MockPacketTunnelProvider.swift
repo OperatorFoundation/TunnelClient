@@ -9,7 +9,7 @@ import Foundation
 import TunnelClient
 import Chord
 
-public class MockPacketTunnelProvider: PacketTunnelProvider
+open class MockPacketTunnelProvider: PacketTunnelProvider
 {
     public var packets: PacketTunnelFlow
 
