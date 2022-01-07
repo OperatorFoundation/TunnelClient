@@ -16,30 +16,30 @@ open class MockPacketTunnelProvider: PacketTunnelProvider
     public var messageReadQueue: BlockingQueue<Data> = BlockingQueue<Data>()
     public var messageWriteQueue: BlockingQueue<Data> = BlockingQueue<Data>()
 
-    public init()
+    open init()
     {
     }
 
-    public func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)
+    open func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)
     {
         completionHandler(nil)
     }
 
-    public func stopTunnel(with reason: ProviderStopReason, completionHandler: @escaping () -> Void)
+    open func stopTunnel(with reason: ProviderStopReason, completionHandler: @escaping () -> Void)
     {
         completionHandler()
     }
 
-    public func cancelTunnelWithError(_ error: Error?)
+    open func cancelTunnelWithError(_ error: Error?)
     {
     }
 
-    public func setNetworkSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
+    open func setNetworkSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
     {
         completionHandler(nil)
     }
 
-    public func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?)
+    open func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?)
     {
         self.messageWriteQueue.enqueue(element: messageData)
 
