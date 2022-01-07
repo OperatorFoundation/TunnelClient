@@ -9,6 +9,6 @@ import Foundation
 
 public protocol TunnelProvider: Provider
 {
-    func setNetworkSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
+    func setTunnelSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
     func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?)
 }

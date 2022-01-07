@@ -86,7 +86,7 @@ extension NEProvider: Provider {}
 
 extension NETunnelProvider: TunnelProvider
 {
-    public func setNetworkSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
+    public func setTunnelSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
     {
         let settings = NETunnelNetworkSettings(tunnelRemoteAddress: tunnelNetworkSettings.tunnelRemoteAddress)
         self.setTunnelNetworkSettings(settings, completionHandler: completionHandler)
