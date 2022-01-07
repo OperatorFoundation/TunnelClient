@@ -13,10 +13,7 @@ open class MockPacketTunnelProvider: PacketTunnelProvider
 {
     public var packets: PacketTunnelFlow = MockPacketTunnelFlow(readQueue: BlockingQueue<PacketTunnelFlowPacket>(), writeQueue: BlockingQueue<PacketTunnelFlowPacket>())
 
-    public var messageReadQueue: BlockingQueue<Data> = BlockingQueue<Data>()
-    public var messageWriteQueue: BlockingQueue<Data> = BlockingQueue<Data>()
-
-    open init()
+    public init()
     {
     }
 
@@ -41,13 +38,9 @@ open class MockPacketTunnelProvider: PacketTunnelProvider
 
     open func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?)
     {
-        self.messageWriteQueue.enqueue(element: messageData)
-
-        let response = messageReadQueue.dequeue()
-
         if let completionHandler = completionHandler
         {
-            completionHandler(response)
+            completionHandler(nil)
         }
     }
 }
