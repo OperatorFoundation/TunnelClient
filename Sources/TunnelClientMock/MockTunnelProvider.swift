@@ -8,7 +8,7 @@
 import Foundation
 import TunnelClient
 
-public class MockTunnelProvider: TunnelProvider
+open class MockTunnelProvider: TunnelProvider
 {
     public func setNetworkSettings(_ tunnelNetworkSettings: TunnelNetworkSettings, completionHandler: @escaping ((Error?) -> Void))
     {
