@@ -11,6 +11,10 @@ import Chord
 
 open class MockPacketTunnelProvider: MockTunnelProvider, PacketTunnelProvider
 {
+    override public init()
+    {
+    }
+
     public var packets: PacketTunnelFlow = MockPacketTunnelFlow(readQueue: BlockingQueue<PacketTunnelFlowPacket>(), writeQueue: BlockingQueue<PacketTunnelFlowPacket>())
 
     public var configuration: VPNProtocol = MockVPNProtocol()
