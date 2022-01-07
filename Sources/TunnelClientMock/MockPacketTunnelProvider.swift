@@ -11,17 +11,13 @@ import Chord
 
 open class MockPacketTunnelProvider: PacketTunnelProvider
 {
-    public var packets: PacketTunnelFlow
+    public var packets: PacketTunnelFlow = MockPacketTunnelFlow(readQueue: BlockingQueue<PacketTunnelFlowPacket>(), writeQueue: BlockingQueue<PacketTunnelFlowPacket>())
 
-    let messageReadQueue: BlockingQueue<Data>
-    let messageWriteQueue: BlockingQueue<Data>
+    public var messageReadQueue: BlockingQueue<Data> = BlockingQueue<Data>()
+    public var messageWriteQueue: BlockingQueue<Data> = BlockingQueue<Data>()
 
-    public init(packetReadQueue: BlockingQueue<PacketTunnelFlowPacket>, packetWriteQueue: BlockingQueue<PacketTunnelFlowPacket>, messageReadQueue: BlockingQueue<Data>, messageWriteQueue: BlockingQueue<Data>)
+    public init()
     {
-        self.messageReadQueue = messageReadQueue
-        self.messageWriteQueue = messageWriteQueue
-
-        self.packets = MockPacketTunnelFlow(readQueue: packetReadQueue, writeQueue: packetWriteQueue)
     }
 
     public func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)
