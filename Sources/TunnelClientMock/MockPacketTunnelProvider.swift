@@ -15,7 +15,7 @@ open class MockPacketTunnelProvider: MockTunnelProvider, PacketTunnelProvider
     {
     }
 
-    public var packets: PacketTunnelFlow = MockPacketTunnelFlow(readQueue: BlockingQueue<PacketTunnelFlowPacket>(), writeQueue: BlockingQueue<PacketTunnelFlowPacket>())
+    public var packets: PacketTunnelFlow = MockPacketTunnelFlow()
 
     public var configuration: VPNProtocol = MockVPNProtocol()
 

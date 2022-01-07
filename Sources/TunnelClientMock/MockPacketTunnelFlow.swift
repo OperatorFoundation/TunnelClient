@@ -13,15 +13,13 @@ public typealias PacketTunnelFlowPacket = (Data, NSNumber)
 
 public class MockPacketTunnelFlow: PacketTunnelFlow
 {
-    let readQueue: BlockingQueue<PacketTunnelFlowPacket>
-    let writeQueue: BlockingQueue<PacketTunnelFlowPacket>
+    public let readQueue: BlockingQueue<PacketTunnelFlowPacket> = BlockingQueue<PacketTunnelFlowPacket>()
+    public let writeQueue: BlockingQueue<PacketTunnelFlowPacket> = BlockingQueue<PacketTunnelFlowPacket>()
     let readTaskQueue: DispatchQueue = DispatchQueue(label: "MockPacketTunnelFlow.readPackets")
     let writeTaskQueue: DispatchQueue = DispatchQueue(label: "MockPacketTunnelFlow.writePackets")
 
-    public init(readQueue: BlockingQueue<PacketTunnelFlowPacket>, writeQueue: BlockingQueue<PacketTunnelFlowPacket>)
+    public init()
     {
-        self.readQueue = readQueue
-        self.writeQueue = writeQueue
     }
 
     public func readPackets(completionHandler: @escaping ([Data], [NSNumber]) -> Void)
