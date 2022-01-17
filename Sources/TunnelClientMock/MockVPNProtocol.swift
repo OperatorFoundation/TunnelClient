@@ -8,7 +8,7 @@
 import Foundation
 import TunnelClient
 
-public struct MockVPNProtocol: VPNProtocol
+public class MockVPNProtocol: VPNProtocol
 {
     public var serverAddress: String?
 

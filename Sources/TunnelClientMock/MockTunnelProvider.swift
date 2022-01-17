@@ -8,7 +8,7 @@
 import Foundation
 import TunnelClient
 
-open class MockTunnelProvider: TunnelProvider
+open class MockTunnelProvider: MockTunnelProvider
 {
     public init()
     {

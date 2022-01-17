@@ -8,12 +8,12 @@
 import Foundation
 import TunnelClient
 
-public struct MockTunnelProviderProtocol: TunnelProviderProtocol
+public class MockTunnelProviderProtocol: MockVPNProtocol, TunnelProviderProtocol
 {
     public var providerConfiguration: [String : Any]?
     public var providerBundleIdentifier: String?
 
-    public init()
+    public override init()
     {
         self.providerConfiguration = nil
         self.providerBundleIdentifier = nil
