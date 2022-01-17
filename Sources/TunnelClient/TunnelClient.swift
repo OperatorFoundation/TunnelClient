@@ -125,7 +125,7 @@ extension NETunnelNetworkSettings: TunnelNetworkSettings
 extension NEIPv4Settings: IPv4Settings {}
 extension NEIPv6Settings: IPv6Settings {}
 
-extension NETunnelProviderProtocol: TunnelProviderProtocol {}
+//extension NETunnelProviderProtocol: TunnelProviderProtocol {}
 extension NEVPNProtocol: VPNProtocol {}
 
 #endif

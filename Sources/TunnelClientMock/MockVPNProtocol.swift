@@ -8,11 +8,11 @@
 import Foundation
 import TunnelClient
 
-public class MockVPNProtocol: VPNProtocol
+public class MockVPNProtocol: MockTunnelProviderProtocol, VPNProtocol
 {
     public var serverAddress: String?
 
-    public init()
+    public override init()
     {
         self.serverAddress = nil
     }

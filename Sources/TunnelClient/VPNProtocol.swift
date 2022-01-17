@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol VPNProtocol: TunnelProviderProtocol
+public protocol VPNProtocol
 {
     var serverAddress: String? { get set }
 }
